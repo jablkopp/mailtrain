@@ -37,6 +37,7 @@
 
 <body class="{{#if user}}logged-in user-{{user.username}}{{/if}}">
 
+    {{#if user}}
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,7 +117,7 @@
             </div>
         </div>
     </nav>
-
+    {{/if}}
     <!-- Main jumbotron for a primary marketing message or call to action -->
 
     {{#if indexPage}}
@@ -144,12 +145,13 @@
         {{flash_messages}} {{{body}}}
 
     </div>
-
+    {{#if user}}
     <footer class="footer">
         <div class="container">
             <p class="text-muted">&copy; 2016 Kreata OÜ <a href="https://mailtrain.org">Mailtrain.org</a>, <a href="mailto:info@mailtrain.org">info@mailtrain.org</a>. <a href="https://github.com/Mailtrain-org/mailtrain">{{#translate}}Source on GitHub{{/translate}}</a></p>
         </div>
     </footer>
+    {{/if}}
 
     <script src="/javascript/jquery-2.2.1.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
